@@ -41,6 +41,7 @@ public class HashMapOperations {
 		HashMap<Integer, String> hm1 = new HashMap<>();
 		hm1 = (HashMap<Integer, String>) hm.clone();
 		
+		hm1.remove(1);
 		System.out.println(hm);
 		System.out.println();
 		

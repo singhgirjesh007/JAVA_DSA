@@ -1,6 +1,7 @@
 package lambda_expression_demo;
 
 import java.util.ArrayList;
+import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
@@ -18,6 +19,8 @@ class Employee {
 public class FunctionOperations {
 
 	public static void main(String[] args) {
+		
+		System.out.println("tet");
 		// TODO Auto-generated method stub
 		Function<Integer,Integer> f = n->n*n;
 		System.out.println(f.apply(4));
@@ -53,11 +56,17 @@ public class FunctionOperations {
 		
 		Predicate<Integer> pr = i->i>1500;
 		
+		Consumer<Employee> con = e->{
+			System.out.println(e.name + " " + e.salary);	
+		};
+		
+		
+		
 		ar.forEach(val ->{
 			
 			int bonus = fn.apply(val);
 			if(pr.test(bonus)) {
-			System.out.println(val.name + " " + bonus);
+			con.accept(val);
 			}
 			
 		});
